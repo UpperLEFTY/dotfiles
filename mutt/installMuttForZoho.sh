@@ -2,9 +2,17 @@
 # Config
 muttrcFile='/.muttrc'
 muttdirdefault='/.mutt'
-# /Config
+# End Config
 
-echo "This script installs mutt and configures it to be used with Gmail or Google Apps"
+# TODO: needs more work to be useful
+# See:
+# https://www.reddit.com/r/commandline/comments/3q9t4z/what_is_your_favorite_email_client_for_the/cwd5q6d/
+
+#TODO: add a check for mutt install
+#TODO: add a new check for different email provider (gmail, zoho, etc)
+
+
+echo "This script installs mutt and configures it to be used with Gmail or Google Apps"  
 echo
 read -r -p '... Install mutt using Homebrew? [y/N]' muttInstall
 if [ "$muttInstall" != "y" ]; then
