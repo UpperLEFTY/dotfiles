@@ -7,6 +7,9 @@
 # Initialize terraform against a particular tfstate
 # shellcheck disable=SC3044 
 
+# Usage: tfinit <environment>
+#
+#
 
 tfinit() {
   if [ -d "terraform" ]; then
@@ -36,6 +39,10 @@ tfinit() {
 # Run the expected execution plan
 # 
 
+# Usage: tfplan <environment>
+#
+#
+
 tfplan() {
   if [ -d "terraform" ]; then
     POP_TF="yes"
@@ -63,6 +70,10 @@ tfplan() {
 # 
 # Destroy all resources
 # 
+
+# Usage: tfdestroy <environment>
+#
+#
 
 tfdestroy() { 
   if [ -d "terraform" ]; then
@@ -93,6 +104,11 @@ tfdestroy() {
 # Apply the terraform execution plan with before/after timestamps
 # 
 
+# Usage: tfapply <environment>
+#
+#
+
+
 tfapply() {
   if [ -d "terraform" ]; then
     POP_TF="yes"
@@ -122,6 +138,10 @@ tfapply() {
 # 
 # Import existing resources into your tfstate
 # 
+
+# Usage: tfimport <environment> <resource> <id>
+#
+#
 
 tfimport() {
   if [ -d "terraform" ]; then
@@ -158,6 +178,10 @@ tfimport() {
 # 
 # Migrate your current state into a new state file
 # 
+
+# Usage: tfmigrate <environment>
+#
+#
 
 tfmigrate() {
   if [ -d "terraform" ]; then
