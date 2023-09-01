@@ -5,7 +5,7 @@
 #
 # Note: The main reason for doing this is to simplify the
 #       output and also have it relative to the project root.
-
+# shellcheck disable=all
 cd "$(dirname "${BASH_SOURCE[0]}")/../.." \
     && . "./scripts/utils/check_markdown_files.sh"
 

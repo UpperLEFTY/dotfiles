@@ -9,17 +9,17 @@
 cd "$(dirname "${BASH_SOURCE[0]}")/../.." || exit
 
 find \
-    src/os \
-    src/shell \
-    scripts/**/*.sh \
-    -type f \
-    ! -path 'src/**/*.applescript' \
-    ! -path 'src/**/*.terminal' \
-    ! -path 'src/shell/curlrc' \
-    ! -path 'src/shell/inputrc' \
-    -exec shellcheck \
-            --exclude=SC1090 \
-            --exclude=SC1091 \
-            --exclude=SC2155 \
-            --exclude=SC2164 \
-    {} +
+        src/os \
+        src/shell \
+        scripts/**/*.sh \
+        -type f \
+        ! -path 'src/**/*.applescript' \
+        ! -path 'src/**/*.terminal' \
+        ! -path 'src/shell/curlrc' \
+        ! -path 'src/shell/inputrc' \
+        -exec shellcheck \
+                --exclude=SC1090 \
+                --exclude=SC1091 \
+                --exclude=SC2155 \
+                --exclude=SC2164 \
+        {} +
