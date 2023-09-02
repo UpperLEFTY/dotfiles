@@ -2,6 +2,8 @@
 
 # Set `ZSH` as the current user's login shell.
 
+# shellcheck disable=SC1091
+
 cd "$(dirname "${ZSH_SOURCE[0]}")" \
     && . "utils.sh"
 
