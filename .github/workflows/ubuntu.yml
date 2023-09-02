@@ -13,11 +13,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Lint shell files
+        run: ./scripts/lint/shell.sh
+
+      - name: Lint Markdown files
+        run: ./scripts/lint/markdown.sh
+
       - name: Check links from Markdown file
         run: ./scripts/check_links/markdown.sh
 
-name: Check links
+name: Ubuntu
 
-on:
-  schedule:
-    - cron: "0 0 * * SAT"
+on: push

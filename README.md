@@ -1,5 +1,19 @@
-# Dotfiles for MacOS or Linux env 
-## Quick Development Setup 
+[UpperLEFTY][repo] / [dotfiles][repo dotfiles] / README.md
+
+--------------------------------------------------------
+--------------------------------------------------------
+[![CI status for macOS][ci badge macos]][ci link macos]
+[![CI status for Ubuntu][ci badge ubuntu]][ci link ubuntu]
+
+
+[UpperLEFTY]'s dotfiles
+
+These are the base dotfiles that I start with when I set up
+a new environment (for more specific local needs I use the
+[`*.local`](#local-settings) files).
+
+Table of Contents
+-----------------
 
 ## Installation 
 
@@ -52,3 +66,15 @@ cd dotfiles
 ### Shell
 
 - [Oh My Zsh](https://ohmyz.sh/) - Framework for managing your Zsh configuration
+
+
+
+
+
+
+
+
+
+
+
+
