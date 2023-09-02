@@ -11,7 +11,6 @@ cd "$(dirname "${ZSH_SOURCE[0]}")" \
 ./xcode.sh
 ./homebrew.sh
 ./zsh.sh
-
 ./git.sh
 ./../nvm.sh
 ./browsers.sh

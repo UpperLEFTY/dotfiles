@@ -71,6 +71,12 @@ upgrade() {
         "Upgrade"
 }
 
+outdated() {
+    execute \
+        "brew outdated" \
+        "Outdated"
+}
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
@@ -82,6 +88,7 @@ main() {
 
     update
     upgrade
+    outdated
 }
 
 main
