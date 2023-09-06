@@ -1,7 +1,6 @@
 [UpperLEFTY][repo] / [dotfiles][repo dotfiles] / README.md
 
 --------------------------------------------------------
---------------------------------------------------------
 [![CI status for macOS][ci badge macos]][ci link macos]
 [![CI status for Ubuntu][ci badge ubuntu]][ci link ubuntu]
 
@@ -15,7 +14,7 @@ a new environment (for more specific local needs I use the
 Table of Contents
 -----------------
 
-## Installation 
+## Installation
 
 ```bash
 # clone this repository
@@ -39,7 +38,7 @@ cd dotfiles
 ### Brewfile
 
 - [Homebrew](https://brew.sh/) - The missing package manager for macOS
-- [Homebrew Bundler] 
+- [Homebrew Bundler]
 
 ### Dev Tools
 
@@ -67,14 +66,22 @@ cd dotfiles
 
 - [Oh My Zsh](https://ohmyz.sh/) - Framework for managing your Zsh configuration
 
+<!-- Link labels: -->
 
-
-
-
-
-
-
-
-
-
-
+[ci badge macos]: https://github.com/UpperLEFTY/dotfiles/workflows/macOS/badge.svg
+[ci badge ubuntu]: https://github.com/UpperLEFTY/dotfiles/workflows/Ubuntu/badge.svg
+[ci link macos]: https://github.com/UpperLEFTY/dotfiles/actions?query=workflow%3AmacOS
+[ci link ubuntu]: https://github.com/UpperLEFTY/dotfiles/actions?query=workflow%3AUbuntu
+[fork]: https://help.github.com/en/github/getting-started-with-github/fork-a-repo
+[Git]: src/git
+[install macos]: src/os/installs/macos
+[install ubuntu]: src/os/installs/ubuntu
+[preferences macos]: src/os/preferences/macos
+[preferences ubuntu]: src/os/preferences/ubuntu
+[repo]: https://github.com/UpperLEFTY
+[setup script]: https://github.com/UpperLEFTY/dotfiles/blob/main/src/os/setup.sh#L3
+[setup]: src/os/setup.sh
+[shell]: src/shell
+[symlink]: src/os/create_symbolic_links.sh
+[tmux]: src/tmux
+[vscode plugins]: src/os/installs/macos/vscode.sh
