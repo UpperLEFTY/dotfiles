@@ -2,14 +2,16 @@
 
 if command -v brew &> /dev/null; then
 
-    declare BASH_COMPLETION_PATH="$(brew --prefix 2> /dev/null)/etc/profile.d/bash_completion.sh"
+    declare BASH_COMPLETION_PATH=
+    "$(brew --prefix 2> /dev/null)/etc/profile.d/bash_completion.sh"
 
     if [ -r "$BASH_COMPLETION_PATH" ]; then
 
         # Ensure existing `bash-completion@1` continues to work.
         # https://github.com/Homebrew/homebrew-core/pull/36254
 
-        export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
+        export BASH_COMPLETION_COMPAT_DIR=
+        "$(brew --prefix)/etc/bash_completion.d"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -26,5 +28,6 @@ if command -v brew &> /dev/null; then
     fi
 
 elif [ -f /etc/bash_completion ]; then
+# shellcheck disable=all
     . /etc/bash_completion;
 fi
