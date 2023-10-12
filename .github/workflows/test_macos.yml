@@ -1,0 +1,23 @@
+# For more information about the configurations used
+# in this file, please see the GitHub Actions documentation.
+#
+# https://docs.github.com/en/actions
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  name: Test
+
+  on: [push]
+
+  jobs:
+    test:
+      runs-on: macos-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+
+        - name: Install dependencies
+          run: npm install
+
+        - name: Run tests
+          run: npm test
