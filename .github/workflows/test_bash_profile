@@ -1,0 +1,45 @@
+# For more information about the configurations used
+# in this file, please see the GitHub Actions documentation.
+#
+# https://docs.github.com/en/actions
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+name: Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Test bash_profile
+        run: |
+          cd /Users/ealex/dotfiles/src/shell/ubuntu/
+          source bash_profile
+
+          # Test that all files listed in FILES_TO_SOURCE are sourced correctly
+          for file in "${FILES_TO_SOURCE[@]}"; do
+            assert [ -r "$HOME/.$file" ]
+          done
+
+          # Test that source_bash_files function does not throw any errors
+          assert_no_errors source_bash_files
+
+          # Test that get_os function returns the correct operating system
+          assert_equals "$(get_os)" "Ubuntu"
+
+          # Test that cd command in source_bash_files function changes directory to the correct location
+          assert_equals "$(pwd)" "/Users/ealex/dotfiles/src/shell/ubuntu"
+
+          # Test that unset command at the end of the file unsets the source_bash_files function
+          assert_false type source_bash_files &> /dev/null
