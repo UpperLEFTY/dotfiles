@@ -7,7 +7,6 @@
 #       output and also have it relative to the project root.
 
 # shellcheck disable=all
-shellcheck source=/scripts/utils/check_markdown_files.sh
 
 cd "$(dirname "${BASH_SOURCE[0]}")/../.." \
     && . "./scripts/utils/check_markdown_files.sh"
