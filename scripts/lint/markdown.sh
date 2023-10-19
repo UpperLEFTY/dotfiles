@@ -18,6 +18,5 @@ lint() (
 )
 
 check_markdown_files \
-    "." \
-    ignore \
+    "." \ 
     lint
