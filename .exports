@@ -2,7 +2,7 @@
 
 
 # Path:        ~/.dotfiles/bash/exports.sh
-# Created:     2023-08-18, 15:01    @x200
+# Created:     2023-10-18, 15:01    @x200
 
 
 # Enable persistent REPL history for `node`.
@@ -26,8 +26,9 @@ export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
 
 # Highlight section titles in manual pages.
-#export LESS_TERMCAP_md="${yellow}";
-  #echo "export LESS_TERMCAP_md=\"${yellow}\"" >> ~/.exports;
+yellow='\e[33m' # ANSI color code for yellow text
+export LESS_TERMCAP_md="${yellow}";
+  echo "export LESS_TERMCAP_md=\"${yellow}\"" >> ~/.exports;
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
@@ -38,4 +39,4 @@ export GPG_TTY=
 (tty);
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
-#export BASH_SILENCE_DEPRECATION_WARNING=1;
+export BASH_SILENCE_DEPRECATION_WARNING=1;
