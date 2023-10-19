@@ -7,10 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm install
+      - name: Run check_links.yml workflow
+        uses: ./.github/workflows/check_links.yml
 
-      - name: Run tests
-        run: npm test
+      - name: Check links from Markdown file
+        run: ./scripts/check_links/markdown.sh
+
+      - name: Check workflow status
+        run: |
+          if [ ${{ job.status }} != "completed" ]; then
+            echo "Workflow failed"
+            exit 1
+          fi

@@ -1,21 +1,18 @@
-# For more information about the configurations used
-# in this file, please see the GitHub Actions documentation.
-#
-# https://docs.github.com/en/actions
+name: Test Ubuntu
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+on:
+  push:
+    branches: [ main ]
 
 jobs:
-  macOS:
-    runs-on: macos-latest
+  test:
+    runs-on: ubuntu-latest
     steps:
-
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-
-      - name: Run macos.yml workflow
-        uses: ./.github/workflows/macos.yml
+      - name: Run ubuntu.yml workflow
+        uses: ./.github/workflows/ubuntu.yml
 
       - name: Install dependencies
         run: brew install shellcheck
@@ -35,8 +32,3 @@ jobs:
             echo "Workflow failed"
             exit 1
           fi
-
-name: macOS
-
-on: [push, pull_request]
-

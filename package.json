@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/UpperLEFTY/dotfiles/issues"
   },
-  "homepage": "https://github.com/UpperLEFTY/dotfiles#readme"
+  "homepage": "https://github.com/UpperLEFTY/dotfiles#readme",
+  "devDependencies": {
+    "bats": "^1.10.0"
+  }
 }
