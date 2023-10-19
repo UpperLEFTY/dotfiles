@@ -36,7 +36,7 @@ alias map="xargs -n1"
 alias p="cd ~/proxies"
 alias path='printf "%b\n" "${PATH//:/\\n}"'
 alias q="exit"
-#alias t="tmux"
+alias t="tmux"
 alias y="yarn"
 
 
