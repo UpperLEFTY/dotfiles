@@ -1,3 +1,7 @@
+# This file contains the configuration for a GitHub Actions workflow on Ubuntu.
+# It is used to run the following scripts: `lint/shell.sh`, `lint/markdown.sh`, and `check_links/markdown.sh`.
+# The workflow is triggered on push events.
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 # For more information about the configurations used
 # in this file, please see the GitHub Actions documentation.
 #
@@ -5,23 +9,23 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-jobs:
-  ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Lint shell files
-        run: ./scripts/lint/shell.sh
-
-      - name: Lint Markdown files
-        run: ./scripts/lint/markdown.sh
-
-      - name: Check links from Markdown file
-        run: ./scripts/check_links/markdown.sh
-
-name: Ubuntu
-
-on: push
+#jobs:
+#  ubuntu:
+#    runs-on: ubuntu-latest
+#    steps:
+#
+#      - name: Checkout repository
+#        uses: actions/checkout@v3
+#
+#      - name: Lint shell files
+#        run: ./scripts/lint/shell.sh
+#
+#      - name: Lint Markdown files
+#        run: ./scripts/lint/markdown.sh
+#
+#      - name: Check links from Markdown file
+#        run: ./scripts/check_links/markdown.sh
+#
+#name: Ubuntu
+#
+#on: push

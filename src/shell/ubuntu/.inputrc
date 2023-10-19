@@ -1,5 +1,56 @@
 #!/usr/bin/env bash
 
+# Readline library configuration options.
+# http://ss64.com/bash/syntax-inputrc.html
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# If there are multiple matches for completion,
+# make TAB cycle through them.
+
+TAB: menu-complete
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Searching files via partial match.
+
+# ↑
+#"\e[A":history-search-backward
+# ↓
+#"\e[B":history-search-forward
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Disable beeping and window flashing.
+
+set bell-style none
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Use the `vi` set of key bindings (default is `emacs`).
+
+#set editing-mode vi
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Use case-insensitive TAB autocompletion.
+
+set completion-ignore-case on
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Perform partial completion on the first Tab press, and
+# only start cycling full results on the second Tab press.
+
+set menu-complete-display-prefix on
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Display a list of the matching files
+
+set show-all-if-ambiguous on
+
+
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
 
@@ -10,7 +61,7 @@ set show-all-if-ambiguous on
 set mark-symlinked-directories on
 
 # Use the text that has already been typed as the prefix for searching through
-# commands (i.e. more intelligent Up/Down behavior) 
+# commands (i.e. more intelligent Up/Down behavior)
 # already in zshrc alias h='history-search-backward'
 #"\e[B": history-search-forward
 #"\e[A": history-search-backward

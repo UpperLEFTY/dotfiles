@@ -16,5 +16,6 @@ cd "$(dirname "${ZSH_SOURCE[0]}")" \
 ./browsers.sh
 ./misc_tools.sh
 ./../npm.sh
+./tmux.sh
 ./vscode.sh
 

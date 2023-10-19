@@ -97,7 +97,7 @@
     # Merge GitHub pull request on top of the current branch or,
     # if a branch name is specified, on top of the specified branch.
 
-    mpr = "!f() { \
+    merge_pr = "!f() { \
         current_branch=\"$(git symbolic-ref --short HEAD)\"; \
         branch=\"${2:-$current_branch}\"; \
         \
@@ -115,7 +115,7 @@
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    r = rebase
+    RBASE = rebase
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -131,7 +131,7 @@
 
     # Remove last commits (by default it removes the last commit).
 
-    rlc = "!f() { \
+    removes_last_commit = "!f() { \
         number_of_commits=\"${1:-1}\"; \
         git reset --hard \"HEAD~$number_of_commits\"; \
     }; f"
@@ -150,9 +150,9 @@
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Seach commits by commit message.
+    # Find commits by commit message.
 
-    sm = "!f() { \
+    find_commit_message = "!f() { \
         git log --date=short --decorate --pretty=custom --grep=\"$1\"; \
     }; f"
 
@@ -178,7 +178,7 @@
 
     # Undo last commits (by default it undoes the last commit).
 
-    ulc = "!f() { \
+    undo_last_commit = "!f() { \
         number_of_commits=\"${1:-1}\"; \
         git reset --soft \"HEAD~$number_of_commits\"; \
     }; f"

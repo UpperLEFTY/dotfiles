@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# shellcheck disable=SC1091
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../utils.sh"
 
@@ -64,7 +65,7 @@ brew_prefix() {
 
 }
 
-brew_tap() {
+brewTAP() {
     brew tap "$1" &> /dev/null
 }
 

@@ -7,7 +7,7 @@ cd "$(dirname "${ZSH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-initialize_git_repository() {
+init_git_repository() {
 
     declare -r GIT_ORIGIN="$1"
 
