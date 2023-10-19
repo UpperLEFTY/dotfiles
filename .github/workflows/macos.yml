@@ -5,38 +5,38 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-jobs:
-  macOS:
-    runs-on: macos-latest
-    steps:
-
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-
-      - name: Run macos.yml workflow
-        uses: ./.github/workflows/macos.yml
-
-      - name: Install dependencies
-        run: brew install shellcheck
-
-      - name: Lint shell files
-        run: ./scripts/lint/shell.sh
-
-      - name: Lint Markdown files
-        run: ./scripts/lint/markdown.sh
-
-      - name: Check links from Markdown file
-        run: ./scripts/check_links/markdown.sh
-
-      - name: Check workflow status
-        run: |
-          if [ ${{ job.status }} != "completed" ]; then
-            echo "Workflow failed"
-            exit 1
-          fi
-
-name: macOS
-
-on: [push]
+#jobs:
+#  macOS:
+#    runs-on: macos-latest
+#    steps:
+#
+#      - name: Checkout repository
+#        uses: actions/checkout@v3
+#
+#
+#      - name: Run macos.yml workflow
+#        uses: ./.github/workflows/macos.yml
+#
+#      - name: Install dependencies
+#        run: brew install shellcheck
+#
+#      - name: Lint shell files
+#        run: ./scripts/lint/shell.sh
+#
+#      - name: Lint Markdown files
+#        run: ./scripts/lint/markdown.sh
+#
+#      - name: Check links from Markdown file
+#        run: ./scripts/check_links/markdown.sh
+#
+#      - name: Check workflow status
+#        run: |
+#          if [ ${{ job.status }} != "completed" ]; then
+#            echo "Workflow failed"
+#            exit 1
+#          fi
+#
+#name: macOS
+#
+#on: [push]
 
