@@ -38,5 +38,5 @@ jobs:
 
 name: macOS
 
-on: [push, pull_request]
+on: [push]
 
