@@ -64,7 +64,7 @@ brew_prefix() {
 
 }
 
-brew_tap() {
+brewTAP() {
     brew tap "$1" &> /dev/null
 }
 
