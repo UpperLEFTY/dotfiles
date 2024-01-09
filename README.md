@@ -51,7 +51,7 @@ cd dotfiles
 
 - [1Password](https://1password.com/) - Password Manager
 - ~[LastPass]~ - DELETE
-- [Notion](https://www.notion.so/) - Notion 
+- [Notion](https://www.notion.so/product?fredir=1) - Notion 
 
 ### Fonts
 
