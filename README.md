@@ -50,7 +50,8 @@ cd dotfiles
 ### Apps
 
 - [1Password](https://1password.com/) - Password Manager
-- ~[LastPass]~ (https://www.forbes.com/sites/daveywinder/2023/03/03/why-you-should-stop-using-lastpass-after-new-hack-method-update/?sh=1fde64f428fc)
+- ~[LastPass]~ - DELETE
+- [Notion](https://www.notion.so/) - Notion 
 
 ### Fonts
 
