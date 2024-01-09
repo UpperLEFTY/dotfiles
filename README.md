@@ -1,4 +1,4 @@
-[UpperLEFTY][repo] / [dotfiles][repo dotfiles] / README.md
+[UpperLEFTY][repo] / [`dotfiles`](https://github.com/UpperLEFTY/dotfiles/) / README.md
 
 --------------------------------------------------------------------------------
 
