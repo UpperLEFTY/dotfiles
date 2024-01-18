@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This is the brewfile for macOS or Linux
+
 # Install command-line tools using Homebrew.
 
 # Make sure we’re using the latest Homebrew.
