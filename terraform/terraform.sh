@@ -3,7 +3,7 @@
 # terraform helper functions
 # You can either run them from the project root or from the /terraform directory
 
-#  AWS_PROFILE is used by terraform to determine which profile to use for the AWS provider (DEV, STAGE, PROD, etc.)
+#  AWS_PROFILE is used by terraform to determine which profile to use for the AWS provider (DEV, QA, SANDBOX(DEV), UAT, PROD, etc.)
 # Initialize terraform against a particular tfstate
 # shellcheck disable=SC3044
 
@@ -25,7 +25,7 @@ tfinit() {
 
   echo "Using profile test_$1"
   export AWS_PROFILE="test_$1"
-  # AWS_PROFILE is used by terraform to determine which profile to use for the AWS provider (DEV, STAGE, PROD, etc.)
+  # AWS_PROFILE is used by terraform to determine which profile to use for the AWS provider (DEV, QA, SANDOX(DEV), UAT, PROD, etc.)
   terraform "init -reconfigure -backend-config=config/backend-$1.conf"
 
   if [ -n "$POP_TF" ]; then
