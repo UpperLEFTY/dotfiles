@@ -3,9 +3,9 @@
 # terraform helper functions
 # You can either run them from the project root or from the /terraform directory
 
-#
+#  AWS_PROFILE is used by terraform to determine which profile to use for the AWS provider (DEV, STAGE, PROD, etc.)
 # Initialize terraform against a particular tfstate
-# shellcheck disable=SC3044 
+# shellcheck disable=SC3044
 
 # Usage: tfinit <environment>
 #
@@ -14,7 +14,7 @@
 tfinit() {
   if [ -d "terraform" ]; then
     POP_TF="yes"
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     pushd ./terraform || return
   fi
 
@@ -25,19 +25,19 @@ tfinit() {
 
   echo "Using profile test_$1"
   export AWS_PROFILE="test_$1"
-
+  # AWS_PROFILE is used by terraform to determine which profile to use for the AWS provider (DEV, STAGE, PROD, etc.)
   terraform "init -reconfigure -backend-config=config/backend-$1.conf"
 
   if [ -n "$POP_TF" ]; then
     POP_TF=''
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     popd ... || exit
   fi
 }
 
-# 
+#
 # Run the expected execution plan
-# 
+#
 
 # Usage: tfplan <environment>
 #
@@ -46,7 +46,7 @@ tfinit() {
 tfplan() {
   if [ -d "terraform" ]; then
     POP_TF="yes"
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     pushd ./terraform || return
   fi
 
@@ -62,23 +62,23 @@ tfplan() {
 
   if [ -n "$POP_TF" ]; then
     POP_TF=''
-    # shellcheck disable=SC3044 
-    popd || exit 
+    # shellcheck disable=SC3044
+    popd || exit
   fi
 }
 
-# 
+#
 # Destroy all resources
-# 
+#
 
 # Usage: tfdestroy <environment>
 #
 #
 
-tfdestroy() { 
+tfdestroy() {
   if [ -d "terraform" ]; then
     POP_TF="yes"
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     pushd ./terraform || exit
     return
   fi
@@ -95,14 +95,14 @@ tfdestroy() {
 
   if [ -n "$POP_TF" ]; then
     POP_TF=''
-  # shellcheck disable=SC3044  
+  # shellcheck disable=SC3044
     popd  || exit
   fi
 }
 
-# 
+#
 # Apply the terraform execution plan with before/after timestamps
-# 
+#
 
 # Usage: tfapply <environment>
 #
@@ -112,7 +112,7 @@ tfdestroy() {
 tfapply() {
   if [ -d "terraform" ]; then
     POP_TF="yes"
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     pushd ./terraform || return
   fi
 
@@ -130,14 +130,14 @@ tfapply() {
 
   if [ -n "$POP_TF" ]; then
     POP_TF=''
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     popd || exit
   fi
 }
 
-# 
+#
 # Import existing resources into your tfstate
-# 
+#
 
 # Usage: tfimport <environment> <resource> <id>
 #
@@ -146,7 +146,7 @@ tfapply() {
 tfimport() {
   if [ -d "terraform" ]; then
     POP_TF="yes"
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     pushd ./terraform || return
   fi
 
@@ -170,14 +170,14 @@ tfimport() {
 
   if [ -n "$POP_TF" ]; then
     POP_TF=''
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     popd || exit
   fi
 }
 
-# 
+#
 # Migrate your current state into a new state file
-# 
+#
 
 # Usage: tfmigrate <environment>
 #
@@ -186,7 +186,7 @@ tfimport() {
 tfmigrate() {
   if [ -d "terraform" ]; then
     POP_TF="yes"
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     pushd ./terraform || return
   fi
 
@@ -202,7 +202,7 @@ tfmigrate() {
 
   if [ -n "$POP_TF" ]; then
     POP_TF=''
-    # shellcheck disable=SC3044 
+    # shellcheck disable=SC3044
     popd || exit
   fi
 }
